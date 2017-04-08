@@ -91,10 +91,10 @@ def download(left, right, top, bottom, zoom, filename, maptype="default"):
 
 def _download(x, y, z, filename, maptype):
     url = URL.get(maptype, maptype)
-    path = './tiles/%s/%i/%i' % (filename, z, x) 
+    path = './tiles/%s/%i/%i' % (filename, z, x)
     map_url = url.format(x=x, y=y, z=z)
     r = requests.get(map_url)
-    
+
     if not os.path.isdir(path):
         os.makedirs(path)
     with open('%s/%i.png' % (path, y), 'wb') as f:
@@ -180,6 +180,6 @@ def cml():
     process_latlng(float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]), int(sys.argv[5]), str(sys.argv[6]), str(sys.argv[7]))
 
 if __name__ == '__main__':
-    config()
-    # test()
-    # cml()
+    #config()
+    #est()
+    cml()
